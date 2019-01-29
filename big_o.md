@@ -105,3 +105,19 @@ What a computer scientist would call Big O, the mathematician would call Big The
 
 ## Space Complexity
 - An `n` element array would be described as `O(n) space`
+
+## Example Table
+| Big O | Name | Examples |
+| - | - | - |
+| O(1) | Constant | Stack push / pop, linked list insert |
+| O(log n) | Logarithmic |Binary search of a sorted list |
+| O(n) | Linear | Linear search, compare two strings |
+| O(n log n) | Linearithmic | Merge sort, quick sort |
+| O(n^2) | Quadratic | Bubble, selection and insertion sort, traverse 2d array |
+| O(n^k) | Polynomial | ? |
+| O(k^n) | Exponential | n-Queens, Traveling salesman |
+
+## Helpful Videos
+- <https://www.youtube.com/watch?v=XiGedDZGOM8&index=6&list=PLTd6ceoshprfdzLWovxULl8Lt7RAFKTe5>
+- <https://www.youtube.com/watch?v=v4cd1O4zkGw>
+- <https://www.youtube.com/watch?v=D6xkbGLQesk>
