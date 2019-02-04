@@ -60,6 +60,68 @@ def increment(i):
   return i + 1  # O(1)
 ```
 
+### O(log n)
+- Each iteration the amount of work is being cut by a factor (the log base)
+- Signature:
+  1. A loop
+  2. Division where there would normally by the increment
+- A `while` loop may be a tip off. For a simple incrementing variable typically a `for` loop would be used, but if you do something unusual, a `while` loop is more appropriate.
+
+
+```java
+// Java
+int sumDigits(int n) {
+    int sum = 0;
+
+    // Loop with the variable n
+    while (n > 0) {
+      sum += n % 10;
+
+      // The amount of work is divided by 10
+      n /= 10;
+  }
+
+  return sum;
+}
+```
+Here's the above, rewritten as a `for` loop
+```java
+int sumDigits(int n) {
+    int sum;
+
+    for (sum = 0; n > 0; n /= 10) {
+      sum += n % 10;
+    }
+
+    return sum;
+ }
+```
+
+```ruby
+# Ruby
+# arr must be a sorted array
+# key is the value to be found
+def binary_search (arr,key)  
+    lo = 0
+    hi = arr.length - 1
+
+    while (lo <= hi)
+        # The amount of work is divided by 10
+        mid = lo + ((hi - lo) / 2)
+
+        if arr[mid] == key
+            return mid
+        elsif arr[mid] < key
+            lo = mid + 1
+        else
+            hi = mid - 1
+        end
+    end
+
+    return nil
+end
+```
+
 ### O(n)
 ```py
 def increment_array_elements(array):
@@ -81,6 +143,7 @@ function f(array) {
 ```
 
 ### O(2^n)
+Work increases for every iteration!
 ```c
 // C
 int f(int n)
@@ -112,10 +175,38 @@ What a computer scientist would call Big O, the mathematician would call Big The
 | O(1) | Constant | Stack push / pop, linked list insert |
 | O(log n) | Logarithmic |Binary search of a sorted list |
 | O(n) | Linear | Linear search, compare two strings |
-| O(n log n) | Linearithmic | Merge sort, quick sort |
+| O(n log n) | Linearithmic | Merge sort, quick sort (expected case)|
 | O(n^2) | Quadratic | Bubble, selection and insertion sort, traverse 2d array |
 | O(n^k) | Polynomial | ? |
 | O(k^n) | Exponential | n-Queens, Traveling salesman |
+
+## Summing Integers
+1 + 2 + 3 + ... n = O(n^2)
+
+## Summing Powers of 2
+2^0 + 2^1 + 2^3 + ... 2^n = 2^(n+1) -1
+2^(n+1) - 1 = O(2^n)
+
+## Basic Java
+For-each loop
+```java
+public class Main
+{
+	public static void main(String[] args) {
+
+        String fruits[] = { "apple", "banana", "cantaloupe" };
+
+        // iterating over an array
+        // : means in
+        for (String fruit : fruits) {
+
+            // accessing each element of array
+            System.out.print(fruit + "\n");
+        }
+
+	}
+}
+```
 
 ## Helpful Videos
 - <https://www.youtube.com/watch?v=XiGedDZGOM8&index=6&list=PLTd6ceoshprfdzLWovxULl8Lt7RAFKTe5>
