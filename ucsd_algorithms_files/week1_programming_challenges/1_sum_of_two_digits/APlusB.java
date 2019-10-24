@@ -6,9 +6,9 @@ class APlusB {
     }
 
     public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        int a = s.nextInt();
-        int b = s.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
         System.out.println(sumOfTwoDigits(a, b));
     }
 }

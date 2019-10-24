@@ -1,9 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class MaxPairwiseProduct {
-
-    static boolean IS_TESTING = false;
+public class MaxPairwiseProductNaive {
 
     // Multiply all the numbers times each other and return the biggest one.
     static long getMaxPairwiseProductNaive(int[] numbers) {
@@ -60,69 +58,13 @@ public class MaxPairwiseProduct {
     }
 
     public static void main(String[] args) {
-        if (IS_TESTING) {
-            manual_test();
-            stress_test(5, 100000);
+        FastScanner scanner = new FastScanner(System.in);
+        int n = scanner.nextInt();
+        int[] numbers = new int[n];
+        for (int i = 0; i < n; i++) {
+            numbers[i] = scanner.nextInt();
         }
-        else {
-            FastScanner scanner = new FastScanner(System.in);
-            int n = scanner.nextInt();
-            int[] numbers = new int[n];
-            for (int i = 0; i < n; i++) {
-                numbers[i] = scanner.nextInt();
-            }
-            System.out.println(getMaxPairwiseProductScanLargest2(numbers));
-        }
-    }
-
-    public static void manual_test() {
-        assertEquals("Basic1", getMaxPairwiseProductScanLargest2(new int[] {1,2,3,4}), 12);
-        assertEquals("Basic2", getMaxPairwiseProductScanLargest2(new int[] {4,3,2,1}), 12);
-        assertEquals("Overflow", getMaxPairwiseProductScanLargest2(new int[] {10000, 10000}), 100000000);
-        assertEquals("Large Data Set", getMaxPairwiseProductScanLargest2(new int[] {10000, 10000}), 100000000);
-    }
-
-    public static void stress_test(int maxArraySize, int maxNumber) {
-
-        Random random = new Random();
-
-        for (int t = 0; t < 100; t += 1) {
-
-            int maybeArraySize = random.nextInt(maxArraySize);
-            int arraySize = maybeArraySize >= 2 ? maybeArraySize : 2;
-            int[] nums = new int[arraySize];
-
-            // Fill array with random numbers
-            for (int i = 0; i < arraySize; i += 1) {
-                nums[i] = random.nextInt(maxNumber) + 1;
-            }
-
-            // Get results from algo1
-            long result1 = getMaxPairwiseProductNaive(nums);
-
-            // Get result from algo2
-            long result2 = getMaxPairwiseProductScanLargest2(nums);
-
-            // Report results
-            if (result1 == result2) {
-              System.out.print(".");
-            }
-            else {
-              System.out.println("FAIL: " + result1 + ", " + result2);
-            }
-        }
-        System.out.println();
-
-    }
-
-    public static void assertEquals(String testName, long function, long result) {
-        if (function == result) {
-            System.out.println(".");
-        }
-        else {
-            System.out.println(
-                "FAIL: " + testName + " expected " + result + ", got " + function + ".");
-        }
+        System.out.println(getMaxPairwiseProductNaive(numbers));
     }
 
     static class FastScanner {

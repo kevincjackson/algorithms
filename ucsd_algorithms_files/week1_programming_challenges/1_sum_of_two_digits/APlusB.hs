@@ -1,9 +1,9 @@
 
 main = do
-  s <- getLine
-  let w = words s
+  input <- getLine
+  let stringArray = words input
       readInt :: String -> Int
       readInt = read
-      x = map readInt w
-      t = sum x
-  putStrLn $ show t
+      integers = map readInt stringArray
+      total = sum integers
+  putStrLn $ show total

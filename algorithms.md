@@ -8,3 +8,21 @@ good one is whether he considers his code or his data structures more
 important. Bad programmers worry about the code. Good programmers
 worry about data structures and their relationships." - Linus Torvalds
 - "Algorithms + Data Structures = Programs." - Niklaus Wirth
+
+## Manual Testing
+- Test with manual numbers.
+- Test with large numbers to catch over flow errors.
+  - Check numbers over 2**32 / ~2.1 billion / 2 * 10**9
+  - Summary, check numbers of 2 billion.
+- Test with lots of numbers to catch time limit errors.
+  - A modern CPU runs about 10**9, or a billion operations / second.
+  - A quadratic (slow) algorithm, checking a dataset of 10**5 (ten thousand),
+    would have 10**10 operations, or 10 billion operations. That would take about 10 seconds.  
+  - Summary: check with a dataset of 10,000.
+
+## Stress Testing
+- Test on two different implementations of an algorithm.
+  - Test with random numbers to catch corner cases.
+- Implementation:
+  - Stress test should loop, and spit out the test data and OK if the test matches,
+  or quit if it fails.
