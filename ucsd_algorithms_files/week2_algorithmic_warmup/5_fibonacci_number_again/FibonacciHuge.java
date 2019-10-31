@@ -1,16 +1,15 @@
 import java.util.*;
+import java.math.BigInteger;
 
 public class FibonacciHuge {
 
-    private static boolean TESTING = true;
+    private static boolean TESTING = false;
 
-    private static long getFibonacciMod(long n, int m) {
-        long cycle = getCycle(n, m);
-        long mod_n = n % cycle;
-        return getFibModHelper(mod_n, m);
+    private static long getFibonacciModHuge(long n, int m) {
+        return getFibMod(n, m);
     }
 
-    public static long getFibModHelper(long n, int m) {
+    public static long getFibMod(long n, int m) {
         if (n <= 1) {
             return n;
         }
@@ -28,14 +27,13 @@ public class FibonacciHuge {
     }
 
     // Returns 0 if unsuccessful or result > 0 if succesful
-    public static long getCycle(long n, int m) {
+    public static long getCycle(int m) {
         long temp = 0;
         long previous = 0;
         long current = 1;
         long cycle = 0;
         long i = 1;
 
-        //while (i < n) {
         while (true) {
               temp = previous % m;
               previous = current % m;
@@ -49,27 +47,39 @@ public class FibonacciHuge {
               i += 1;
         }
 
-       // System.out.println("n: " + n + ", m: " + m + ", cycle: " + cycle);
         return cycle;
     }
 
     public static void main(String[] args) {
         if (TESTING) {
-            assertEquals("1 mod2", getFibonacciMod(1, 2), 1);
-            assertEquals("2 mod2", getFibonacciMod(2, 2), 1);
-            assertEquals("3 mod2", getFibonacciMod(3, 2), 0);
-            assertEquals("4 mod2", getFibonacciMod(4, 2), 1);
-            assertEquals("5 mod2", getFibonacciMod(5, 2), 1);
-            assertEquals("6 mod2", getFibonacciMod(6, 2), 0);
-            assertEquals("10 mod2", getFibonacciMod(10, 2), 1);
-            assertEquals("239", getFibonacciMod(239, 1000), 161);
+            assertEquals("1 mod2", getFibonacciModHuge(1, 2), 1);
+            assertEquals("2 mod2", getFibonacciModHuge(2, 2), 1);
+            assertEquals("3 mod2", getFibonacciModHuge(3, 2), 0);
+            assertEquals("4 mod2", getFibonacciModHuge(4, 2), 1);
+            assertEquals("5 mod2", getFibonacciModHuge(5, 2), 1);
+            assertEquals("6 mod2", getFibonacciModHuge(6, 2), 0);
+            assertEquals("10 mod2", getFibonacciModHuge(10, 2), 1);
+            assertEquals("239", getFibonacciModHuge(239, 1000), 161);
             //assertEquals("2,816,213,588", getFibonacciMod(2816213588, 239), 151);
         }
         else {
+            // Get input n and m (modulo)
             Scanner scanner = new Scanner(System.in);
-            long n = scanner.nextLong();
+            String nString = scanner.next();
             int m = scanner.nextInt();
-            System.out.println(getFibonacciMod(n, m));
+
+            // Need to get Big Integer down to long size.
+            BigInteger nBig = new BigInteger(nString);
+
+            // Need to get cycle to Big Integer
+            long cycle = getCycle(m);
+            String cycleString = String.valueOf(cycle);
+            BigInteger cycleBig = new BigInteger(cycleString);
+
+            // Make conversion
+            long mod_n = nBig.mod(cycleBig).longValue();
+
+            System.out.println(getFibonacciModHuge(mod_n, m));
         }
     }
 
