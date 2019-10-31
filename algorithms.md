@@ -36,3 +36,15 @@ worry about data structures and their relationships." - Linus Torvalds
   - Improve existing algorithm
 4. Magic Algorithm
   - Requires unique insight
+
+## Important Powers of Two
+| Power of 2 | Exact Value | Approx Value | Byte Name | Number Type |
+| - | - | - | - | - |
+| 8 | 256 | - | - | TODO |
+| 10 | 1024 | 1 thousand | 1 KB |
+| 16 | 65,536 | - | 64 KB |
+| 20 | 1,048,576 | 1 million | 1 MB |
+| 30 | 1,073,741,824 | 1 billion | 1 GB |
+| 32 | 4,294,967,296 | - | - | Int ? |
+| 40 | 1,099,511,627,776 | 1 trillion | 1 TB |
+| 64 | | - | - | Long ? |
