@@ -40,18 +40,37 @@ Germany, England, and the United States.
 ## Example Functions
 Realistically, here are the possible answers
 
-| Function | n=5 | n=10 | n=15 | Human Meaning |
-| - | - | - | - | - |
-| O(1) | 1 | 1 | 1 | constant time |
-| O(log n) | 1.6 | 2.3 | 2.7 | less then linear growth |
-| O(n) | 5 | 10 | 15 | linear growth |
-| O(n log n) | 8.0 | 23.0 | 40 | just above linear growth |
-| O(n^2) | 25 | 100 | 225 | quadratic Growth |
-| O(2^n) | 32 | 1024 | 32,768 | exponential growth |
-| O(n!) | 120 | 3,628,800 | 1,307,674,368,000 | factorial growth |
+| Function | n=100 | Human Meaning |
+| - | - | - |
+| O(1) | 1 | constant time |
+| O(log n) | 2 | less then linear growth |
+| O(n^(1/2)) | 10 | less then linear growth |
+| O(n) | 100 | linear growth |
+| O(n log n) | 1000 | just above linear growth |
+| O(n^2) | 10,000| quadratic Growth |
+| O(n^3) | 1,000,000| polynomial Growth |
+| O(2^n) | 10^30 | exponential growth |
+| O(n!) | 10^57 | factorial growth |
 
 Notice how quickly 2^n (exponential) and n! (factorial) run away from the rest.
 
+## Max Inputs for 1 Second Runtime
+| Function | Max Input |
+| - | - |
+| O(log n) | 10^(10^9) |
+| O(n) | 10^9 |
+| O(n log n) | 10^7.5 = ~ 30M |
+| O(n^2) | 10^4.5 = ~ 30k |
+| O(2^n) | 30 |
+| O(n!) | 12 |
+
+
+## Example
+O(64) < O(log_8 n) < O(log_2 n) < O(4n) < O(n log_6 n) < O(n log_2 n) < 8n^2 < 6n^3 < 8^(2n)
+
+## Logs With Different Bases Only Vary By A Constant
+- log_2(n) is Big O, Big Theta, and Big Omega of log_8(n)
+- Base Change Rule: log_a⁡(n) = log_b(⁡n) / log_b⁡(a)
 
 ## Examples
 ### O(1)
@@ -160,9 +179,10 @@ int f(int n)
 ```
 
 ## Academic Note
-- O means  <=. Upper bound
-- Ω (Omega) means >=. Lower bound
+- O (Omikron) means  <=. Upper bound
+  - O(n) = O(n^2) = O(n^3) = O(2^n) All true (but not precise)
 - Θ (Theta) Means =  Lower and Upper Bound are the same.
+- Ω (Omega) means >=. Lower bound
 
 What a computer scientist would call Big O, the mathematician would call Big Theta. For example, a simple print loop for an array would be described O(n) by a computer scientist, but's it's also correct to describe it as O(n^2) and O(n!) because it is *less than or equal* to those.  The computer scientist means Θ(n). This is a pedantic point though.
 
@@ -207,6 +227,17 @@ public class Main
 	}
 }
 ```
+## Exponent Review
+- 2^2 * 2^3 = 2^5
+- 2^(2n) = 4^n
+- sqrt n = n^(1/2) = n^0.5
+- 5^(log_2 n) = n^(log_2 5) = n^(~2.3)
+
+## Main Logarithm Rules Common To Algorithm Problems
+- Power Rule: log_a⁡(n^k) = k * log_a(⁡n)
+- Product Rule: log_a⁡(n * m) = log_a(⁡n) + log_a(⁡m)
+- n^(log_a⁡(b)) = b^(log_a⁡(n))
+- Base Change Rule: log_a⁡(n) = log_b(⁡n) / log_b⁡(a)
 
 ## Helpful Videos
 - <https://www.youtube.com/watch?v=XiGedDZGOM8&index=6&list=PLTd6ceoshprfdzLWovxULl8Lt7RAFKTe5>

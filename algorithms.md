@@ -26,3 +26,13 @@ worry about data structures and their relationships." - Linus Torvalds
 - Implementation:
   - Stress test should loop, and spit out the test data and OK if the test matches,
   or quit if it fails.
+
+## Levels of Algo Desgin
+1. Naive Algorithm:
+  - Slow, definition based
+2. Algorithm by way of Standard Tools
+  - Use standard techniques
+3. Optimized
+  - Improve existing algorithm
+4. Magic Algorithm
+  - Requires unique insight
