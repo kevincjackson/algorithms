@@ -12,12 +12,12 @@ worry about data structures and their relationships." - Linus Torvalds
 ## Manual Testing
 - Test with manual numbers.
 - Test with large numbers to catch over flow errors.
-  - Check numbers over 2**32 / ~2.1 billion / 2 * 10**9
+  - Check numbers over 2^32 / ~2.1 billion / 2 * 10^9
   - Summary, check numbers of 2 billion.
 - Test with lots of numbers to catch time limit errors.
-  - A modern CPU runs about 10**9, or a billion operations / second.
-  - A quadratic (slow) algorithm, checking a dataset of 10**5 (ten thousand),
-    would have 10**10 operations, or 10 billion operations. That would take about 10 seconds.  
+  - A modern CPU runs about 10^9, or a billion operations / second.
+  - A quadratic (slow) algorithm, checking a dataset of 10^5 (ten thousand),
+    would have 10^10 operations, or 10 billion operations. That would take about 10 seconds.  
   - Summary: check with a dataset of 10,000.
 
 ## Stress Testing
