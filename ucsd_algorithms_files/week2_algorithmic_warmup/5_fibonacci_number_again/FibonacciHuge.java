@@ -60,7 +60,6 @@ public class FibonacciHuge {
             assertEquals("6 mod2", getFibonacciModHuge(6, 2), 0);
             assertEquals("10 mod2", getFibonacciModHuge(10, 2), 1);
             assertEquals("239", getFibonacciModHuge(239, 1000), 161);
-            //assertEquals("2,816,213,588", getFibonacciMod(2816213588, 239), 151);
         }
         else {
             // Get input n and m (modulo)
