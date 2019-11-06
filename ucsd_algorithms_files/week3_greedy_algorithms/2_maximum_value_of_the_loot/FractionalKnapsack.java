@@ -3,7 +3,10 @@ import java.util.Scanner;
 public class FractionalKnapsack {
     private static double getOptimalValue(int capacity, int[] values, int[] weights) {
         double value = 0;
-        //write your code here
+
+        System.out.println(capacity);
+        System.out.println(values);
+        System.out.println(weights);
 
         return value;
     }
@@ -20,4 +23,4 @@ public class FractionalKnapsack {
         }
         System.out.println(getOptimalValue(capacity, values, weights));
     }
-} 
+}
