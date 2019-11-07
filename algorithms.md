@@ -56,3 +56,10 @@ worry about data structures and their relationships." - Linus Torvalds
 
 ## Writing Code
 - Make sure to walk the code with concrete values. Pretend you are the compiler, parser, evaluator.
+
+## Greedy Algorithms
+- A greedy algorithm is one in which, an optimal move is made which reduces the main problem to a similar sub problem.
+- Ideal for problems where initial knowledge is enough to make an optimal move. Not ideal for solutions which require different moves on sub problems.
+- To make a greedy algorithm,
+  - Make a greedy / optimal choice which reduces your problem to a sub-problem.
+  - Iterate on your subproblem, until there is no problem left.
