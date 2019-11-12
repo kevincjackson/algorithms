@@ -63,3 +63,15 @@ worry about data structures and their relationships." - Linus Torvalds
 - To make a greedy algorithm,
   - Make a greedy / optimal choice which reduces your problem to a sub-problem.
   - Iterate on your subproblem, until there is no problem left.
+
+## Divide & Conquer Algorithms
+- Break the problem into non-overlapping problems of the same type.
+- Solve the subproblems.
+- Combine the results.
+
+## Recurrence Relation
+- A sequence of values defined in terms of a recursive function
+  - Ex) The naive recursive definition of Fibonacci numbers.
+  - For divide and conquer algorithms the time of n is usually determined as a recurrence relation
+    - Ex) T(n) = T(n-1) + c for Linear Search
+  - In a recursion tree, you show the input n and the work as a column, along with all the subproblems.
