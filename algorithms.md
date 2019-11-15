@@ -75,3 +75,11 @@ worry about data structures and their relationships." - Linus Torvalds
   - For divide and conquer algorithms the time of n is usually determined as a recurrence relation
     - Ex) T(n) = T(n-1) + c for Linear Search
   - In a recursion tree, you show the input n and the work as a column, along with all the subproblems.
+
+## Questions
+
+## Todo
+- Be able to quickly write mergesort, quicksort, quicksort3, & insertionSort from scratch.
+- Be able to write binarySearch from scratch.
+- Do the trivium on the Master Theorem.
+- Solve Majority Element using Divide and Conquer / Figure out the Conquer!

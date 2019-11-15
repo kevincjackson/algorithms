@@ -67,7 +67,7 @@ public class MajorityElement {
         int majority_size = nums.length / 2;
 
         // Make counter
-        HashMap<Integer, Integer> counter = new HashMap<Integer, Integer>(nums.length);
+        HashMap<Integer, Integer> counter = new HashMap<Integer, Integer>();
 
         // Loop and count
         for (int n : nums) {
