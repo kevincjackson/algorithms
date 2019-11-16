@@ -13,29 +13,51 @@ public class Sorting {
         int m1 = left;
         int m2 = left;
         int lessers = left;
+        int temp;
 
         // Scan the remaining elements
         for (int current = left + 1; current <= right; current += 1) {
 
-            // Found lessersPivot:
+            // Found less than pivot
             if (arr[current] < pivotValue) {
+
+                  // System.out.print("found <: before: ");
+                  // printArray(arr);
                   // advance lessers pointer
                   lessers += 1;
 
                   // Swap with current
-                  int temp = arr[current];
+                  temp = arr[current];
                   arr[current] = arr[lessers];
                   arr[lessers] = temp;
+
+                  // System.out.print("found <: after:  ");
+                  // printArray(arr);
             }
 
-            // Found equalToPivot: advance m2 (equal region), swap with current
+            // Found equal to pivot
             if (arr[current] == pivotValue) {
+              // System.out.print("found =: before: ");
+              // printArray(arr);
+
                   // advance pointers
                   m2 += 1;
                   lessers += 1;
 
-                  // insert the pivot at the beginning
-                  arrayInsertByIndexes(arr, current, left + 1);
+                  // Add pivots to the rest of the pivots
+                  // Need to do two swaps
+                  // Swap current and lesser (greater and pivot change places)
+                  temp = arr[lessers];
+                  arr[lessers] = arr[current];
+                  arr[current] = temp;
+
+                  // Swap lesser and m2 (lesser and pivot change places)
+                  temp = arr[lessers];
+                  arr[lessers] = arr[m2];
+                  arr[m2] = temp;
+                  // System.out.print("found =: after:  ");
+                  // printArray(arr);
+
             }
         }
 
@@ -55,26 +77,28 @@ public class Sorting {
         return m;
     }
 
-    private static void quicksort3(int[] array, int left, int right) {
+    private static void quicksort3(int[] arr, int left, int right) {
 
         // Nothing to do
-        if (left >= right) {
+        if (left >= right)
             return;
-        }
 
         // Pick random pivot that's not the farthest left
-        int pivot = random.nextInt(right - left + 1) + left; // Random pivot
+        int pivot = random.nextInt(right - left + 1) + left;
+        // System.out.println("pivot: " + arr[pivot]);
 
         // Swap left and pivot
-        int tempLeft = array[left];
-        array[left] = array[pivot];
-        array[pivot] = tempLeft;
+        int tempLeft = arr[left];
+        arr[left] = arr[pivot];
+        arr[pivot] = tempLeft;
 
         // use partition3
         // partition3 establishes a middle subarray where its values equal the subarray
-        int[] mids = partition3(array, left, right);
-        quicksort3(array, left, mids[0] - 1);
-        quicksort3(array, mids[1] + 1, right);
+        int[] mids = partition3(arr, left, right);
+        // System.out.print("partition: ");
+        // printArray(arr);
+        quicksort3(arr, left, mids[0] - 1);
+        quicksort3(arr, mids[1] + 1, right);
     }
 
 
