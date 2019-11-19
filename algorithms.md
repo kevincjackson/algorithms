@@ -52,7 +52,7 @@ worry about data structures and their relationships." - Linus Torvalds
 | 64 | 18,446,744,073,709,551,616 | 18 quintillion, 10^18 | - | Long, Double |
 
 ## Learning
-- If you're stuck for 25 minutes on a problem, stop and look up the answer. You probably don't have domain knowledge. This will prevent you from being stuck for hours, when you just don't have the the knowledge you need. After you learn the answer, test yourself using timed intervals on you're new knowledge.
+- If you're stuck for 25 minutes on a problem, stop and look up the answer. You probably don't have domain knowledge. This will prevent you from being stuck for hours, when you just don't have the the knowledge you need. After you learn the answer, test yourself using timed intervals on your new knowledge.
 
 ## Writing Code
 - Make sure to walk the code with concrete values. Pretend you are the compiler, parser, evaluator.
@@ -69,6 +69,11 @@ worry about data structures and their relationships." - Linus Torvalds
 - Solve the subproblems.
 - Combine the results.
 
+## Dynamic Programming
+- Storing results
+  1. Top down is called memoization (memory)
+  2. Bottom up is called tabulation.
+
 ## Recurrence Relation
 - A sequence of values defined in terms of a recursive function
   - Ex) The naive recursive definition of Fibonacci numbers.
@@ -83,3 +88,6 @@ worry about data structures and their relationships." - Linus Torvalds
 - Be able to write binarySearch from scratch.
 - Do the trivium on the Master Theorem.
 - Solve Majority Element using Divide and Conquer / Figure out the Conquer!
+
+## Tips
+- Insertions are slow. Prefer swapping in arrays (fast).
